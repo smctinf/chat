@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <title>First Room</title>
 </head>
 
 <body>
-    <form id="form-chat">
-        <textarea name="chat-box" id="chat-box" cols="30" rows="10"></textarea>
-        <input type="text" id="">
+    <form id="chat-form">
+        <textarea name="chat-box" id="chat-box" cols="30" rows="10"></textarea><br>
+        <input type="text" id="chat-message" size="100" placeholder="Write a message!"><br>
+        <button>Send!</button>
+        <!-- |json_script is a filter template-->
+        {{ room_name|json_script:"room_name"}}
     </form>
-
-
 </body>
-
+<script src="{% static 'room.js' %}" ></script>
 </html>
