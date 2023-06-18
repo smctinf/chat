@@ -64,7 +64,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'settings.wsgi.application'
 #Daphne will know the ASGI application now.
 ASGI_APPLICATION = 'settings.asgi.application'
-
+#Defining the channels_layers
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG':{
+            'hosts':[('127.0.0.1',6379)],
+        }
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
