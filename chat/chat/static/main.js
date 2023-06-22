@@ -7,5 +7,5 @@ $inputNameRoom.focus();
 $roomForm.addEventListener("submit", event => {
     event.preventDefault();
     let roomName = $inputNameRoom.value;
-    window.location.pathname = `${roomName}/`;
+    window.location.pathname = `chat/${roomName}`;
 });
